@@ -35,7 +35,7 @@ export default function PasswordReset() {
 
                 <div className="loginsignup">
 
-                    <div className="loginsignup-container">
+                    <div className="loginsignup-container" style={{marginTop:"150px"}} >
 
                         <h1>Enter Your Email</h1>
 

@@ -50,7 +50,9 @@ const UserProfileButtons = () => {
           Authorization: `Bearer ${authToken}`,
         },
       })
+      
       setUserData(response.data)
+      console.log("-----",response)
     } catch (err) {
       console.error("Error fetching user data:", err)
       toast.error("Failed to fetch user data. Please try again later.")
@@ -113,7 +115,7 @@ const UserProfileButtons = () => {
       case "info":
         return (
           <div className="tab-content">
-            <h2 style={{ color: "#000" }}>User Information</h2>
+            <h2 style={{ color: "#3498db", display:"flex", justifyContent:"center", fontWeight:"bold"}}>User Information</h2>
             {isEditing ? renderUserForm() : renderUserCard()}
           </div>
         )
@@ -128,7 +130,7 @@ const UserProfileButtons = () => {
     <section className="container-fluid">
       <div className="profile-bg container">
         <div className="content">
-          <img src={profile_icon || "/placeholder.svg"} alt="Logo" />
+          <img src={profile_icon || "/placeholder.svg"} className="user-logo" alt="Logo" />
           <h4>
             <strong>User Name : </strong>
             {userData?.name}
@@ -149,40 +151,101 @@ const UserProfileButtons = () => {
     </section>
   )
 
+  // const renderUserForm = () => (
+  //   <section className="container-fluid">
+  //     <div className="profile-bg container">
+  //       <div className="content">
+  //         <form>
+  //           <div className="mb-3">
+  //             <label htmlFor="name" className="form-label">
+  //               Name
+  //             </label>
+  //             <input type="text" className="form-control" id="name" defaultValue={userData?.name} />
+  //           </div>
+  //           <div className="mb-3">
+  //             <label htmlFor="phone" className="form-label">
+  //               Phone
+  //             </label>
+  //             <input type="tel" className="form-control" id="phone" defaultValue={userData?.phone} />
+  //           </div>
+  //           <div className="mb-3">
+  //             <label htmlFor="email" className="form-label">
+  //               Email address
+  //             </label>
+  //             <input type="email" className="form-control" id="email" defaultValue={userData?.email} />
+  //           </div>
+  //           <button type="submit" className="btn btn-primary">
+  //             Save Changes
+  //           </button>
+  //         </form>
+  //       </div>
+  //     </div>
+  //   </section>
+  // )
+
   const renderUserForm = () => (
-    <section className="container-fluid">
-      <div className="profile-bg container">
-        <div className="content">
-          <form>
-            <div className="mb-3">
-              <label htmlFor="name" className="form-label">
-                Name
-              </label>
-              <input type="text" className="form-control" id="name" defaultValue={userData?.name} />
-            </div>
-            <div className="mb-3">
-              <label htmlFor="phone" className="form-label">
-                Phone
-              </label>
-              <input type="tel" className="form-control" id="phone" defaultValue={userData?.phone} />
-            </div>
-            <div className="mb-3">
-              <label htmlFor="email" className="form-label">
-                Email address
-              </label>
-              <input type="email" className="form-control" id="email" defaultValue={userData?.email} />
-            </div>
-            <button type="submit" className="btn btn-primary">
+    <section className="container py-8 mx-auto">
+      <div className="bg-white p-8 rounded-xl shadow-lg  mx-auto" style={{width: "50%"}}>
+        <h2 className="text-3xl font-semibold text-center text-gray-800 mb-8">Edit Profile</h2>
+  
+        <form>
+          <div className="mb-6">
+            <label htmlFor="name" className="block text-xl font-medium text-gray-700 mb-2">
+              Name
+            </label>
+            <input
+              type="text"
+              className="w-full p-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:outline-none transition duration-300 ease-in-out"
+              id="name"
+              defaultValue={userData?.name}
+              placeholder="Enter your name"
+              required
+            />
+          </div>
+  
+          <div className="mb-6">
+            <label htmlFor="phone" className="block text-xl font-medium text-gray-700 mb-2">
+              Phone
+            </label>
+            <input
+              type="tel"
+              className="w-full p-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:outline-none transition duration-300 ease-in-out"
+              id="phone"
+              defaultValue={userData?.phone}
+              placeholder="Enter your phone number"
+              required
+            />
+          </div>
+  
+          <div className="mb-6">
+            <label htmlFor="email" className="block text-xl font-medium text-gray-700 mb-2">
+              Email address
+            </label>
+            <input
+              type="email"
+              className="w-full p-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:outline-none transition duration-300 ease-in-out"
+              id="email"
+              defaultValue={userData?.email}
+              placeholder="Enter your email"
+              required
+            />
+          </div>
+  
+          <div className="mt-6">
+            <button
+              type="submit"
+              className="w-full py-4 bg-indigo-500 text-white text-xl font-semibold rounded-lg hover:bg-indigo-700 focus:ring-4 focus:ring-indigo-300 transition duration-300 ease-in-out"
+            >
               Save Changes
             </button>
-          </form>
-        </div>
+          </div>
+        </form>
       </div>
     </section>
-  )
+  );
 
   return (
-    <div className="user-profile-container">
+    <div className="user-profile-container" style={{position:"fixed"}}>
       <button className="mobile-menu-toggle" onClick={toggleSidebar}>
         ☰
       </button>

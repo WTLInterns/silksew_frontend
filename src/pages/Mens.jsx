@@ -273,10 +273,10 @@ const Mens = () => {
         .view-product-btn {
           width: 100%;
           padding: 0.75rem;
-          background-color: #2563eb;
+          background-color: #4d0000;
           color: white;
           border: none;
-          border-radius: 0.5rem;
+          // border-radius: 0.5rem;
           font-weight: 600;
           font-size: 1rem;
           cursor: pointer;
@@ -284,7 +284,8 @@ const Mens = () => {
         }
 
         .view-product-btn:hover {
-          background-color: #1d4ed8;
+            background: linear-gradient(90deg, #C0392B, #FDF3E7);
+
         }
 
         .view-product-btn:active {

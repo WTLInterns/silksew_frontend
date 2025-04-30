@@ -65,7 +65,9 @@ const Footer = () => {
         <br/>
 
         <div className="footer-section footer-center">
-          <h3 className="footer-heading">Contact Us</h3>
+	 
+	 
+          <h3 className="footer-heading" style={{marginTop:"10px"}}>Contact Us</h3>
           <address className="footer-address">
             <div className="footer-info">
               <div className="footer-icon" aria-hidden="true">

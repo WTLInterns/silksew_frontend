@@ -9,6 +9,7 @@
 .section-title {
   color: #4A4A4A;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  margin-bottom: 10px;
 }
 
 /* Gradient Line Replacing <hr> */
@@ -27,6 +28,7 @@
   gap: 40px;
   z-index: 10;
   position: relative;
+  margin-top: 30px
 }
 
 /* Interactive Card Styling */
@@ -96,12 +98,13 @@
 /* Button with Animated Gradient */
 .animated-button {
   display: inline-block;
-  padding: 12px 30px;
+  padding: 12px 35px;
   font-size: 1rem;
   color: #ffffff;
-  background: linear-gradient(145deg, #6a5acd, #4b0082);
+  font-weight: bold;
+  background: #4d0000;
   border: none;
-  border-radius: 25px;
+  /* border-radius: 0 2px 2px 2px; */
   box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4);
   cursor: pointer;
   transition: all 0.3s ease;
@@ -122,7 +125,7 @@
   left: -50%;
   width: 200%;
   height: 100%;
-  background: rgba(255, 255, 255, 0.3);
+  /* background: #4d0000; */
   transform: skewX(-30deg);
   transition: left 0.5s;
 }

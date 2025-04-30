@@ -120,15 +120,16 @@ const CartItems = () => {
               }
               navigate("/checkout");
             }}
+            style={{marginTop:"12px"}}
           >
             PROCEED TO CHECKOUT
           </button>
         </div>
         <div className="cartitems-promocode">
           <p>If you have a promo code, enter it here</p>
-          <div className="cartitems-promobox">
-            <input type="text" placeholder="Promo code" />
-            <button>Submit</button>
+          <div className="cartitems-promobox" style={{marginTop:"20px"}}>
+            <input type="text" placeholder="Promo code"  />
+            <button >Submit</button>
           </div>
         </div>
       </div>

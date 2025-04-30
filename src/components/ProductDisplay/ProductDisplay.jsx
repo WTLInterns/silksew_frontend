@@ -261,7 +261,7 @@ const ProductDisplay = () => {
                           <li key={review._id} className="review-item">
                             <div className="review-header">
                               <h4 className="review-name">{review.name}</h4>
-                              <StarRating star={review.rating} />
+                              <StarRating star={review.rating} className="star-rating"  />
                             </div>
                             <p className="review-text">{review.review}</p>
                           </li>

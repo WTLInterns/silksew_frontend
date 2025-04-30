@@ -107,6 +107,7 @@ const RelatedProducts = ({ subcategory, currentProductId }) => {
                   <button
                     className="view-product-button"
                     onClick={() => onProductClick(item)}
+                    style={{backgroundColor:" #4d0000"}}
                   >
                     View Product
                   </button>

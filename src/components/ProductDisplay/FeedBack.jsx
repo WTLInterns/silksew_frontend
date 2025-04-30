@@ -79,7 +79,7 @@ const FeedBack = ({ productId, onNewFeedback }) => {
       ></textarea>
       <br />
 
-      <button className="submit-btn" onClick={handleSubmit}>
+      <button className="submit-btn" onClick={handleSubmit} style={{backgroundColor:"#4d0000"}}>
         Submit Feedback
       </button>
     </div>

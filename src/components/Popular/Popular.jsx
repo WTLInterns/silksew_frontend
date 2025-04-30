@@ -97,7 +97,7 @@ const Popular = () => {
                   <span className="new-price">Rs.{item.price}</span>
                   {item.oldPrice && <span className="old-price">Rs.{item.oldPrice}</span>}
                 </p>
-                <button onClick={() => handleViewProduct(item)} className="animated-button">
+                <button onClick={() => handleViewProduct(item)} className="animated-button" style={{color:"white"}}>
                   View Product
                 </button>
               </div>

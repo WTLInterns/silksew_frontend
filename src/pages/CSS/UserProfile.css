@@ -18,11 +18,13 @@ body {
 .user-profile-container {
   /* display: flex; */
   min-height: 100vh;
+  width: 100%;
+  position:fixed;
 }
 
 .sidebar {
   width: var(--sidebar-width);
-  background-color: #000;
+  background-color:#8b6f4d;
   color: white;
   padding: 20px;
   transition: transform var(--transition-speed) ease-in-out;
@@ -42,6 +44,7 @@ body {
 
 .sidebar-menu-item {
   margin-bottom: 15px;
+
 }
 
 .sidebar-menu-button {
@@ -50,13 +53,14 @@ body {
   width: 100%;
   padding: 12px;
   border: none;
-  background-color: #f7dc6f;
+  background-color: #ecce54;
   color: white;
   cursor: pointer;
   transition: background-color var(--transition-speed);
   text-align: left;
   font-size: 1rem;
   border-radius: 5px;
+  font-weight: bold;
 }
 
 .sidebar-menu-button:hover {
@@ -77,6 +81,7 @@ body {
   flex: 1;
   padding: 40px;
   transition: margin-left var(--transition-speed) ease-in-out;
+  margin-top: 50px;
 }
 
 h1 {
@@ -143,6 +148,11 @@ h2 {
 .form-group {
   margin-bottom: 15px;
 }
+.user-logo{
+  margin:auto;
+}
+
+
 
 .form-group label {
   display: block;
@@ -355,8 +365,8 @@ section {
 .btn {
   padding: 10px 30px;
   margin-top: 15px;
-  border-radius: 20px;
-  background-color: #8B9EC7;
+  /* border-radius: 20px; */
+  background-color: #3498db;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-size: 13px;

@@ -19,6 +19,7 @@ const SubcategorySideBar = ({ subcategories, onSubcategoryClick, selectedSubcate
           -webkit-overflow-scrolling: touch;
           margin-bottom: 2rem;
           padding: 0.5rem;
+          margin-top:60px
         }
 
         .subcategory-list {
