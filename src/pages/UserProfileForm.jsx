@@ -4,6 +4,7 @@ import "./UserProfileForm.css";
 import axios from "axios";
 import { ShopContext } from "../context/ShopContext";
 import { ToastContainer, toast } from "react-toastify";
+import profileImage from '../components/Assets/profile_icon.png'; 
 
 
 const UserProfileForm = () => {

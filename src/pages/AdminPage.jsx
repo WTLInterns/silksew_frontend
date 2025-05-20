@@ -100,7 +100,7 @@ const Dashboard = () => {
         let totalSales = 0
         let confirmedCount = 0
         ordersData.forEach((order) => {
-          if (order.status === "ConfirmedOrder") {
+          if (order.status === "Confirmed") {
             totalSales += order.totalAmount || 0
             confirmedCount++
           }
@@ -198,7 +198,7 @@ const Dashboard = () => {
                 <p>{totalProducts}</p>
               </div>
               <div className="stat-card">
-                <h3>Orders Request</h3>
+                <h3>Orders</h3>
                 <p>{totalOrders}</p>
               </div>
               <div className="stat-card">
