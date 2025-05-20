@@ -176,7 +176,7 @@ const CartItems = () => {
   //   }
 
   //   try {
-  //     const response = await fetch("http://localhost:5001/api/offer/apply-offer", {
+  //     const response = await fetch("https://api.silksew.com/api/offer/apply-offer", {
   //       method: "POST",
   //       headers: { "Content-Type": "application/json" },
   //       body: JSON.stringify({

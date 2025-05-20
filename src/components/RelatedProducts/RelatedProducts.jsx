@@ -16,7 +16,7 @@
 
 //     const fetchRelatedProducts = async () => {
 //       try {
-//         const response = await axios.get("http://localhost:5001/api/products", {
+//         const response = await axios.get("https://api.silksew.com/api/products", {
 //           params: { exclude: currentProductId },
 //         });
 
@@ -148,7 +148,7 @@ const RelatedProducts = ({ subcategory, currentProductId }) => {
 
     const fetchRelatedProducts = async () => {
       try {
-        const response = await axios.get("http://localhost:5001/api/products", {
+        const response = await axios.get("https://api.silksew.com/api/products", {
           params: { exclude: currentProductId },
         });
 

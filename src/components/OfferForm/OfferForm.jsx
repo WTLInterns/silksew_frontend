@@ -22,7 +22,7 @@ const OfferForm = () => {
     e.preventDefault();
     try {
       // await axios.post("http://localhost:5000/api/offers", formData);
-      await axios.post("http://localhost:5001/api/offer/create-offer", formData);
+      await axios.post("https://api.silksew.com/api/offer/create-offer", formData);
       alert("Offer Created Successfully!");
       setFormData({
         code: "",
