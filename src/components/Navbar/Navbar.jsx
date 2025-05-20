@@ -44,7 +44,14 @@ const Navbar = ({ onLoginClick }) => {
 
   const calculateTotalCartItems = () => {
     return cartItems.reduce((total, item) => total + item.quantity, 0)
+
   }
+
+  useEffect(() => {
+    const totalCount = cartItems.reduce((total, item) => total + item.quantity, 0)
+    console.log("🛒 Total cart item count:", totalCount)
+  }, [cartItems])
+  
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen)
@@ -151,7 +158,7 @@ const Navbar = ({ onLoginClick }) => {
         <div className="nav-login-cart">
           <Link to="/cart" className="cart-icon-wrapper">
             <img src={cart_icon || "/placeholder.svg"} alt="Cart" className="cart-icon" />
-            {calculateTotalCartItems() > 0 && <div className="cart-item-count" style={{color:"yellow"}}>{calculateTotalCartItems()}</div>}
+            {calculateTotalCartItems() > 0 && <div className="cart-item-count" style={{color:"black"}}>{calculateTotalCartItems()}</div>}
           </Link>
 
           {user ? (

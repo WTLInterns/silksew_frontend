@@ -406,7 +406,7 @@
 
 
 .special-features-container {
-  max-width: 100%;
+  max-width: 92%;
   margin: 3rem auto;
   padding: 4.5rem 2rem;
   position: relative;
@@ -578,3 +578,4 @@
     height: 28px;
   }
 }
+

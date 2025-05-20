@@ -308,7 +308,7 @@ function Login({ isOpen, onClose }) {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed pt-20 inset-0 bg-black bg-opacity-70 flex items-center justify-center p-4 z-50 backdrop-blur-sm animate-fadeIn mt-10">
+    <div className="fixed pt-20 inset-0 bg-black bg-opacity-70 flex items-center justify-center p-4 z-40 backdrop-blur-sm animate-fadeIn mt-39">
       <div
         className="bg-white rounded-2xl shadow-xl overflow-hidden w-full max-w-4xl mx-auto flex flex-col md:flex-row animate-slideIn"
         onClick={(e) => e.stopPropagation()}

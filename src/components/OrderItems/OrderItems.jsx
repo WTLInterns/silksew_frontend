@@ -479,6 +479,7 @@ const OrderItems = () => {
     if (images && images.length > 0) {
       try {
         const parsedImages = JSON.parse(images[0])
+        console.log("image",parsedImages)
         if (parsedImages[color] && parsedImages[color].length > 0) {
           return parsedImages[color][0]
         }
@@ -492,7 +493,10 @@ const OrderItems = () => {
       }
     }
     return "/placeholder.svg"
+
   }
+
+  
 
   // Flatten order items for pagination
   const flattenedItems = orderData.flatMap((order) =>
@@ -526,6 +530,8 @@ const OrderItems = () => {
       </div>
       <hr />
 
+      
+
       {currentItems.map((item, index) => {
         const {
           productId,
@@ -554,13 +560,20 @@ const OrderItems = () => {
 
         const isEligible = isReturnEligible(createdAt)
 
+
+        
+        // const imageUrl = getImage(product?.images, color);
+        // const displayColor = color || "Default";
+
+        // console.log("--------imageurl",imageUrl)
+
         return (
           <div key={`${orderId}-${index}`} className="cartitem">
             <img
               src={getImage(product.images) || "/placeholder.svg"}
               alt={product.name}
-              className="product-image"
-              style={{ height: "50px" }}
+              // className="product-image"
+              // style={{ height: "500px",width:"500px" }}
             />
             <p>{product.name}</p>
             <p>Rs {product.price}</p>

@@ -96,7 +96,7 @@ useEffect(() => {
                     <span className="new-price">Rs.{item.price.toFixed(2)}</span>
                     {item.oldPrice && <span className="old-price">Rs.{item.oldPrice.toFixed(2)}</span>}
                   </div>
-                  <button onClick={() => handleViewProduct(item)} className="view-product-btn" style={{backgroundColor:'#2563eb'}}>
+                  <button onClick={() => handleViewProduct(item)} className="view-product-btn" >
                     VIEW PRODUCT
                   </button>
                 </div>

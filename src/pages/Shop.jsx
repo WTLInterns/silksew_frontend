@@ -32,6 +32,8 @@ import Offerbar from '../components/Offerbar/Offerbar';
 import NewCollections from '../components/NewCollections/NewCollections';
 import Login from '../pages/Login';
 import CategoryCarousel from '../components/CategoryCarousal';
+import MenBanner from '../components/MenBanner';
+import WomenBanner from './WomenBanner';
 
 const Shop = () => {
   // const [isLoginOpen, setIsLoginOpen] = useState(false);
@@ -41,7 +43,9 @@ const Shop = () => {
       <Offerbar/>
       <Hero/>
       <CategoryCarousel/>
+      <WomenBanner/>
       <Popular/>
+      <MenBanner/>
       <OfferBanner/>
       <NewCollections/>
       {/* <Login isOpen={isLoginOpen} onClose={() => setIsLoginOpen(false)} /> */}

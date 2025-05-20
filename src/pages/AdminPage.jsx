@@ -20,11 +20,15 @@ import {
   faComments,
   faTruck,
   faCheck,
-  faUndo
+  faUndo,
+  faTags 
 } from "@fortawesome/free-solid-svg-icons"
 import AdminUser from "./AdminUser"
 import ShippedOrders from "./ConfirmedOrders"
 import ReturnOrderList from "../components/ReturnOrderList/ReturnOrderList"
+import OfferForm from "../components/OfferForm/OfferForm"
+import UPdateRemoveoffer from "../components/UpdateRemoveOffer/UpdateRemoveOffer"
+
 
 const Dashboard = () => {
   const { user, token, logout } = useContext(AuthContext)
@@ -163,6 +167,14 @@ const Dashboard = () => {
               <FontAwesomeIcon icon={faComments} />
               Complaints
             </li>
+            <li onClick={() => handleMenuClick("OfferForm")}>
+              <FontAwesomeIcon icon={ faTags } />
+              Add Offers
+            </li>
+            <li onClick={() => handleMenuClick("update-remove-offer")}>
+              <FontAwesomeIcon icon={ faTags } />
+              Offers List
+            </li>
             <li onClick={handleLogoutClick}>
               <FontAwesomeIcon icon={faSignOutAlt} />
               Logout
@@ -174,7 +186,7 @@ const Dashboard = () => {
           &#9776;
         </div>
 
-        <div className="main-content">
+        <div className="main-content" style={{marginTop:"70px"}}>
           {selectedOption === "Dashboard" && (
             <section className="stats-cards">
               <div className="stat-card">
@@ -209,6 +221,16 @@ const Dashboard = () => {
           {selectedOption === "ShippedOrders" && <ShippedOrders updateTotalOrders={updateTotalOrders} />}
 
           {selectedOption === "ReturnRequest" && <ReturnOrderList />}
+          {selectedOption === "OfferForm" && (
+            <div style={{ position: 'relative', zIndex: 1 }}>
+              <OfferForm />
+            </div>
+          )}
+          {selectedOption === "update-remove-offer" && (
+            <div style={{ position: 'relative', zIndex: 1 }}>
+              <UPdateRemoveoffer />
+            </div>
+          )}
         </div>
       </div>
     </>

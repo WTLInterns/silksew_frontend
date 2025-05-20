@@ -228,7 +228,7 @@ const ReturnOrderList = () => {
           Authorization: `Bearer ${token}`,
         },
       })
-
+console.log("return product",response)
       const sortedOrders = response.data.sort((a, b) => {
         if (a.returnStatus && !b.returnStatus) return 1
         if (!a.returnStatus && b.returnStatus) return -1
@@ -320,14 +320,14 @@ const ReturnOrderList = () => {
             <tbody>
               {displayedOrders.map((order) => (
                 <tr key={`${order._id}-${order.productId}`} style={{ ":hover": { backgroundColor: "#f5f5f5" } }}>
-                  <td style={{ border: "1px solid #ccc", padding: "0.5rem" }}>{order.productName}</td>
+                  <td style={{ border: "1px solid #ccc", padding: "0.5rem" }}>{order.productId}</td>
                   <td style={{ border: "1px solid #ccc", padding: "0.5rem" }}>
                     {order.street}, {order.city}, {order.state}, {order.zipcode}
                   </td>
                   <td style={{ border: "1px solid #ccc", padding: "0.5rem" }}>
-                    {order.phone}
+                    <strong>Contact : </strong>{order.phone}
                     <br />
-                    {order.email}
+                    <strong>Email: </strong>{order.email}
                   </td>
                   <td style={{ border: "1px solid #ccc", padding: "0.5rem" }}>Rs {order.totalAmount}</td>
                   <td style={{ border: "1px solid #ccc", padding: "0.5rem" }}>{order.paymentMethod}</td>

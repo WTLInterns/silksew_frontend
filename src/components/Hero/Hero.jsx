@@ -389,7 +389,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="hero-section" onMouseMove={handleMouseMove}>
+    <section className="hero-section" onMouseMove={handleMouseMove} style={{top:"50px"}} >
       <div className="hero-slider">
         {slides.map((slide, index) => (
           <div
@@ -406,7 +406,7 @@ const Hero = () => {
             <div className="hero-content">
               <div className="hero-text-content">
                 <span className="hero-eyebrow">Featured Collection</span>
-                <h1 className="hero-title">
+                <h1 className="hero-title" style={{color:"#00bfff"}}>
                   {slide.title}
                   <span className="hero-subtitle">{slide.subtitle}</span>
                 </h1>

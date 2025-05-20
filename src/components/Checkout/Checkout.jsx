@@ -11,6 +11,7 @@ import "react-toastify/dist/ReactToastify.css"
 import axios from "axios"
 import { BASEURL } from "../../config"
 import { useNavigate } from "react-router-dom"
+import { useLocation } from "react-router-dom";
 import "./Checkout.css"
 
 const OrderSuccessPopup = () => {
@@ -25,7 +26,9 @@ const OrderSuccessPopup = () => {
 }
 
 const Checkout = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const location = useLocation();
+  const offerCode = location.state?.offerCode || ""
   const [method, setMethod] = useState("Cash on Delivery")
   const [showSuccessPopup, setShowSuccessPopup] = useState(false)
   const [isLoading, setIsLoading] = useState(false) // Added loading state
@@ -50,6 +53,86 @@ const Checkout = () => {
     const { name, value } = event.target
     setFormData((data) => ({ ...data, [name]: value }))
   }
+
+  // const onSubmitHandler = async (event) => {
+  //   event.preventDefault()
+  //   setIsLoading(true) // Set loading state to true
+
+  //   // Show the success popup immediately
+  //   setShowSuccessPopup(true)
+
+  //   try {
+  //     const token = localStorage.getItem("token")
+  //     if (!token) {
+  //       toast.error("You are not authorized. Please log in.")
+  //       navigate("/login")
+  //       return
+  //     }
+
+  //     if (!cartItems || !Array.isArray(cartItems) || cartItems.length === 0) {
+  //       console.error("Cart is empty or invalid.")
+  //       toast.error("Your cart is empty!")
+  //       return
+  //     }
+
+  //     const orderItems = cartItems
+  //       .map((cartItem) => {
+  //         const product = products.find((p) => p._id === cartItem.productId)
+  //         if (!product) {
+  //           console.warn(`Product not found for productId: ${cartItem.productId}`)
+  //           return null
+  //         }
+  //         return {
+  //           productId: cartItem.productId,
+  //           size: cartItem.size,
+  //           productName: product.name, // Matches backend expected key
+  //           quantity: cartItem.quantity,
+  //           price: product.price,
+  //         }
+  //       })
+  //       .filter((item) => item !== null)
+
+  //     if (orderItems.length === 0) {
+  //       toast.error("No valid products found in cart.")
+  //       return
+  //     }
+
+  //     const totalAmount = getTotalCartAmount() + delivery_fee
+
+  //     const orderData = {
+  //       address: formData,
+  //       items: orderItems,
+  //       totalAmount,
+  //       paymentMethod: method,
+  //     }
+
+  //     // Send order request
+  //     const response = await axios.post(`${BASEURL}/api/orders/place`, orderData, {
+  //       headers: { Authorization: `Bearer ${token}` },
+  //     })
+
+  //     if (response.data.success) {
+  //       // Clear cart after successful order
+  //       setCartItems([])
+
+  //       // Navigate to orders page after a short delay
+  //       setTimeout(() => {
+  //         setShowSuccessPopup(false)
+  //         setIsLoading(false) // Set loading state to false
+  //         navigate("/")
+  //       }, 2000)
+  //     } else {
+  //       setShowSuccessPopup(false)
+  //       setIsLoading(false) // Set loading state to false
+  //       toast.error(response.data.message || "Failed to place order.")
+  //     }
+  //   } catch (error) {
+  //     console.error(error)
+  //     setShowSuccessPopup(false)
+  //     setIsLoading(false) // Set loading state to false
+  //     toast.error(error.response?.data?.message || "An error occurred while placing your order.")
+  //   }
+  // }
 
   const onSubmitHandler = async (event) => {
     event.preventDefault()
@@ -101,6 +184,7 @@ const Checkout = () => {
         items: orderItems,
         totalAmount,
         paymentMethod: method,
+        offerCode: offerCode || undefined, 
       }
 
       // Send order request
