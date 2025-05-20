@@ -307,9 +307,10 @@ const AdminProductForm = () => {
             const data = new FormData()
             data.append("file", file.originFileObj)
             data.append("upload_preset", "Silksew")
-            data.append("cloud_name", "dvpk4sbzi")
+            // data.append("cloud_name", "dejdni8vi")
+             data.append("folder", "image");
 
-            const res = await fetch("https://api.cloudinary.com/v1_1/dvpk4sbzi/image/upload", {
+            const res = await fetch("https://api.cloudinary.com/v1_1/dejdni8vi/image/upload", {
               method: "POST",
               body: data,
             })
